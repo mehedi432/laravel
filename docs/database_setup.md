@@ -10,3 +10,9 @@ DB_DATABASE=blog
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+
+After successfully creating database I need to migrate the database by 
+```sh
+php artisan migrate
+```
+Thiswill migrate our database and create necessarytables for us.
