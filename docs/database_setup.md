@@ -15,4 +15,4 @@ After successfully creating database I need to migrate the database by
 ```sh
 php artisan migrate
 ```
-Thiswill migrate our database and create necessarytables for us.
+This command will migrate our database and create necessary tables for us and the created tables can be shown in database tables list, This command will create 'users' table and 'password_reset' in our database. We can see the migrations in 'database/migrations' folder.
