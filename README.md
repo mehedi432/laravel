@@ -23,20 +23,20 @@ Answer: In order to make application using laraver we need to install several pa
 
 ### Necessary packages for installing and making laraver - 
 ----------------------------------------------------------
-1. Update nad upgrade packages: 
+1. Update nad upgrade packages: <br/>
     `sudo apt update && sudo apt upgrade`
 
-2. Install php:
+2. Install php:<br/>
     `sudo apt install php7.2-common php7.2-cli php7.2-gd php7.2-mysql php7.2-curl php7.2-intl php7.2-mbstring php7.2-bcmath php7.2-imap php7.2-xml php7.2-zip`
 
-3. Install composer(dependency manager for php):
+3. Install composer(dependency manager for php):<br/>
    `sudo apt-get install composer`
 
-4. Give full access to composer: 
+4. Give full access to composer: <br/>
    `sudo chmod 777 -R /home/'user-name'/.composer`
 
-5. Command for generating laravel app:
+5. Command for generating laravel app:<br/>
    `composer create-project --prefer-dist laravel/laravel {name_project}`
 
-6. Serving the application:
+6. Serving the application:<br/>
   `cd {name_project} && php artisan serve`
