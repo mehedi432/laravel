@@ -3,14 +3,14 @@
 
 In this state we will discuss about three major questions these are -
 
-1. What we will learn?
-Answer: We will learn laravel which is a php framework for making web application.
+    1. What we will learn?
+        Answer: We will learn laravel which is a php framework for making web application.
 
-2. Why we learn laravel?
-Answer: We learn laravel because in bangladesh most of the company want laravel as their first choice for making web appliccations. So, from my prospective it is the best option to get a job in bangladesh and also it is built on top of php which is a beautiful language though I personally hate this language but after choosing a lot of frameworks and language I found it the best for web world.
+    2. Why we learn laravel?
+        Answer: We learn laravel because in bangladesh most of the company want laravel as their first choice for making web appliccations. So, from my prospective it is the best option to get a job in bangladesh and also it is built on top of php which is a beautiful language though I personally hate this language but after choosing a lot of frameworks and language I found it the best for web world.
 
-3. How we will learn laravel?
-Answer: We will learn laravel by using laracast, blog posts and also by the help of google and youtube.
+    3. How we will learn laravel?
+        Answer: We will learn laravel by using laracast, blog posts and also by the help of google and youtube.
 
 
 # Let's come to the point of making stuff using laravel....
@@ -18,7 +18,7 @@ Answer: We will learn laravel by using laracast, blog posts and also by the help
 
 
 ## How to install and make application using laravel?
-Answer: In order to make application using laraver we need to install several packages in Ubuntu( I will use Ubuntu 19.10 for installing laravel). 
+    Answer: In order to make application using laraver we need to install several packages in Ubuntu( I will use Ubuntu 19.10 for installing laravel). 
 
 
 ### Necessary packages for installing and making laraver - 
