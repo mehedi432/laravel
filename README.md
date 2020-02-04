@@ -39,4 +39,4 @@ In this state we will discuss about three major questions these are -
    `composer create-project --prefer-dist laravel/laravel blog`
 
 6. Serving the application:<br/>
-  `cd {name_project} && php artisan serve`
+  `cd blog && php artisan serve`
