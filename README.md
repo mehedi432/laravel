@@ -33,7 +33,7 @@ Answer: In order to make application using laraver we need to install several pa
    `sudo apt-get install composer`
 
 4. Give full access to composer: <br/>
-   `sudo chmod 777 -R /home/'user-name'/.composer`
+   `sudo chmod 777 -R /home/$USER/.composer`
 
 5. Command for generating laravel app:<br/>
    `composer create-project --prefer-dist laravel/laravel {name_project}`
