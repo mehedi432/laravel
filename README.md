@@ -36,7 +36,7 @@ In this state we will discuss about three major questions these are -
    `sudo chmod 777 -R /home/$USER/.composer`
 
 5. Command for generating laravel app:<br/>
-   `composer create-project --prefer-dist laravel/laravel {name_project}`
+   `composer create-project --prefer-dist laravel/laravel blog`
 
 6. Serving the application:<br/>
   `cd {name_project} && php artisan serve`
