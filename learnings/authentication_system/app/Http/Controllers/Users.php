@@ -9,6 +9,6 @@ class Users extends Controller
 {
     function list() 
     {
-
+        
     }
 }
