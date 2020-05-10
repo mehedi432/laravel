@@ -25,7 +25,7 @@
     <div id="app">
         @include('includes.nav')
 
-        <main class="py-4 mt-5">
+        <main class="py-4 ">
             
             @auth
                 <div class="container">

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Post\CreatePostRequest;
+use App\Http\Requests\Post\UpdatePostRequest;
 use App\Post;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -45,6 +44,7 @@ class PostController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,
+            'published_at' => $request->published_at,
             'image' => $image,
         ]);
 
@@ -81,9 +81,24 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $data = $request->only(['title', 'description', 'content', 'published_at']);
+
+        // Check new image
+        if ($request->hasFile('image')) {
+            // upload it
+            $image = $request->image->store('posts');
+
+            // Delete old one
+            $post->deleteImage();
+
+            $data['image'] = $image;
+        }
+
+        // Update attributes
+        $post->update($data);
+        return redirect(route('post.index'))->with('success', 'Updated successfully');
     }
 
     /**
@@ -97,7 +112,7 @@ class PostController extends Controller
         $post = Post::withTrashed()->where('id', $id)->firstOrFail();
 
         if ($post->trashed()) {
-            Storage::delete($post->image);
+            $post->deleteImage();
             $post->forceDelete();
         } else {
             $post->delete();
@@ -112,8 +127,21 @@ class PostController extends Controller
      */
     public function trashed()
     {
-        $trashed = Post::withTrashed()->get();
-
+        $trashed = Post::onlyTrashed()->get();
         return view('post.index')->with('posts', $trashed);
+    }
+
+    /**
+     * Restoring a trashed post.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        $post = Post::withTrashed()->where('id', $id)->firstOrFail();
+
+        $post->restore();
+        session()->flash('success', "Post is restored");
+        return redirect()->back();
     }
 }

@@ -79,5 +79,7 @@
     ```
     4. Delete image that are saved in storage folder using 
     ```php
+        // Bug - not working in this project
         Storage::delete($post->image)
     ```
+    5. Update and add trix editor and flat picker for time and writings.

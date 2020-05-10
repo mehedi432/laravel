@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header text-center clearfix bg-secondary text-white">
+        <div class="card-header text-center clearfix shadow-sm">
             {{isset($post) ? "Edit Post" : "Create Post"}}
         </div>
         <div class="card-body">
@@ -18,26 +18,35 @@
             @endif
             <form action="{{isset($post) ? route('post.update', $post->id) : route('post.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                @if (isset($category))
+                @if (isset($post))
                     @method('PUT')
                 @endif
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control" placeholder="{{isset($post) ? $post->title : 'Title of post' }}">
+                    <input type="text" name="title" class="form-control" value="{{ isset($post) ? $post->title : '' }}">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea type="text" name="description" class="form-control" placeholder="{{isset($post) ? $post->description : "Description of post"}}"></textarea>
+                    <input type="text" name="description" class="form-control" value="{{ isset($post) ? $post->description : ''}}">
                 </div>
+
                 <div class="form-group">
                     <label for="content">content</label>
-                    <textarea type="text" name="content" class="form-control" placeholder="{{isset($post) ? $post->content : "Content of post"}}"></textarea>
+                    <input id="content" type="hidden" name="content" value="{{isset($post) ? $post->content : ""}}">
+                    <trix-editor input="content"></trix-editor>
                 </div>
 
                 <div class="form-group">
                     <label for="date">Published At</label>
-                    <input type="date" name="published_at" class="form-control" placeholder="{{isset($post) ? $post->published_at : "Date of published_at"}}">
+                    <input type="text" name="published_at" class="form-control" value="{{ isset($post) ? $post->published_at : "Date of published_at"}}" id="published_at">
                 </div>
+
+                @if (isset($post))
+                    <div class="form-group">
+                        <label for="show-image">Current image</label>
+                        <img src="{{ URL::to('/') }}/storage/{{$post->image}}" alt="Image" width="100%">                        
+                    </div>
+                @endif
 
                 <div class="form-group">
                     <label for="image">Image</label>
@@ -53,5 +62,17 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/trix.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="{{ asset('js/trix.js') }}" defer></script>
+
+    <script>
+        flatpickr('#published_at', {
+            enableTime: true,
+        });
+    </script>
+@endsection
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/trix.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 @endsection

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark shadow fixed-top" style="background-color: #343a40">
+<nav class="navbar navbar-expand-md navbar-dark shadow" style="background-color: #343a40">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             প্রোগ্রামিং বিদ্যা 

@@ -11,7 +11,7 @@
                         <th>#Id</th>
                         <th>Title</th>
                         <th>Image</th>
-                        <th>Edit</th>
+                        <th>Edit | Restore</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
@@ -23,11 +23,14 @@
                                 <td><img src="storage/{{$post->image}}" alt="Image" width="89dp" height="55dp"></td>
                                 <td>
                                     @if ($post->trashed())
-                                        <a href="{{route('post.edit', $post->id)}}" class="btn btn-block btn-outline-info">Edit</a>
+                                        <form action="{{route('restore-posts', $post->id)}}" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                            <button class="btn btn-block btn-outline-info" type="submit">Restore</button>
+                                        </form>
                                             
                                     @else
                                         <a href="{{route('post.edit', $post->id)}}" class="btn btn-block btn-outline-info">Edit</a>
-                                            
                                     @endif
                                 </td>
                                 <td>
@@ -44,7 +47,6 @@
                 </table>
             @else
                 <h3 class="text-center">No post found in database, please add a post for displaying post</h3>
-                
             @endif
             {{-- <div class="d-flex justify-content-center">{{ $posts->links() }}</div> --}}
         </div>
