@@ -9,7 +9,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('sura_names', function () {
-    $sura_names = DB::table('suras')->get();
+    $sura_names = DB::table('suras')->orderBy('id', 'asc')->get();
     return response()->json($sura_names)->withHeaders([
         'Access-Control-Allow-Origin' => "*",
         'Access-Control-Allow-Methods' => "GET, POST, PUT, PATCH, Delete, OPTIONS",
