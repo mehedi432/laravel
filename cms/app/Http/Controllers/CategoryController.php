@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\Categories\CreateCategoryRequest;
 use App\Http\Requests\Categories\UpdateCategoryRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
@@ -17,6 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        // dd(Category::first()->posts());
         $categories = DB::table('categories')->paginate(3);
         return view('categories.index')->with('categories', $categories);
     }

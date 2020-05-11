@@ -10,7 +10,7 @@ class Post extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'description', 'content', 'image', 'published_at'];
+    protected $fillable = ['title', 'description', 'content', 'image', 'published_at', 'category_id'];
 
     /**
      * Delete image from storage folder
@@ -19,5 +19,10 @@ class Post extends Model
     public function deleteImage()
     {
         Storage::delete($this->image);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

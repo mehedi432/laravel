@@ -9,9 +9,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/category', 'CategoryController');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/category', 'CategoryController');
 
-Route::resource('/post', 'PostController');
-Route::get('trashed-post', 'PostController@trashed')->name('trashed-post.index');
-Route::put('restore-post/{post}', 'PostController@restore')->name('restore-posts');
+    Route::resource('/post', 'PostController');
+    Route::get('trashed-post', 'PostController@trashed')->name('trashed-post.index');
+    Route::put('restore-post/{post}', 'PostController@restore')->name('restore-posts');
+});

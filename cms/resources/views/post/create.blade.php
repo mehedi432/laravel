@@ -41,6 +41,21 @@
                     <input type="text" name="published_at" class="form-control" value="{{ isset($post) ? $post->published_at : "Date of published_at"}}" id="published_at">
                 </div>
 
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}"
+                                @if (isset($post))
+                                    @if ($category->id == $post->category_id)
+                                        selected
+                                    @endif
+                                @endif    
+                            >{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 @if (isset($post))
                     <div class="form-group">
                         <label for="show-image">Current image</label>

@@ -10,6 +10,7 @@
                     <tr class="text-center">
                         <th>#Id</th>
                         <th>Name</th>
+                        {{-- <th>Post Count</th> --}}
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -19,6 +20,7 @@
                             <tr>
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
+                                {{-- <td>{{ $category->posts->count() }}</td> Not working but why? --}}
                                 <td><a href="{{route('category.edit', $category->id)}}" class="btn btn-block btn-outline-info" >Edit</a></td>
                                 <td><button class="btn btn-block btn-outline-danger" onclick="handleDelete({{$category->id}})">Delete</button></td>
                             </tr>                        
