@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         // dd(Category::first()->posts());
-        $categories = DB::table('categories')->paginate(3);
+        $categories = Category::all();
         return view('categories.index')->with('categories', $categories);
     }
 

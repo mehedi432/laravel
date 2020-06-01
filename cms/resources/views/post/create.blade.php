@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card">
+    <div class="card boba-card">
         <div class="card-header text-center clearfix shadow-sm">
             {{isset($post) ? "Edit Post" : "Create Post"}}
         </div>
@@ -38,7 +38,7 @@
 
                 <div class="form-group">
                     <label for="date">Published At</label>
-                    <input type="text" name="published_at" class="form-control" value="{{ isset($post) ? $post->published_at : "Date of published_at"}}" id="published_at">
+                    <input type="date" name="published_at" class="form-control" value="{{ isset($post) ? $post->published_at : "Date of published_at"}}" id="published_at">
                 </div>
 
                 <div class="form-group">

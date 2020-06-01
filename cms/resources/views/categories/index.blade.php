@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card">
-        <div class="card-header text-center bg-secondary text-white clearfix">Category <span class="float-right"><a class="text-white" href="{{route('category.create')}}">Add</a></span></div>
+    <div class="card boba-card">
+        <div class="card-header text-center clearfix shadow-sm">Category <span class="float-right"><a class="text-dark" href="{{route('category.create')}}">Add</a></span></div>
         <div class="card-body">
             @if ($categories->count()) 
                 <table class="table table-hover">
@@ -10,7 +10,7 @@
                     <tr class="text-center">
                         <th>#Id</th>
                         <th>Name</th>
-                        {{-- <th>Post Count</th> --}}
+                        <th>Post Count</th> 
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -20,9 +20,9 @@
                             <tr>
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
-                                {{-- <td>{{ $category->posts->count() }}</td> Not working but why? --}}
+                                <td>{{ $category->posts->count() }}</td>
                                 <td><a href="{{route('category.edit', $category->id)}}" class="btn btn-block btn-outline-info" >Edit</a></td>
-                                <td><button class="btn btn-block btn-outline-danger" onclick="handleDelete({{$category->id}})">Delete</button></td>
+                                <td><button class="btn btn-block btn-outline-danger" onclick="handleDelete( {{ $category->id }} )">Delete</button></td>
                             </tr>                        
                         @endforeach
                     </tbody>
@@ -30,7 +30,7 @@
             @else
                 <h3 class="text-center">No category found in database, please add a category for displaying post</h3>
             @endif
-            <div class="d-flex justify-content-center">{{ $categories->links() }}</div>
+           
         </div>
     </div>
 
