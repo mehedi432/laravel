@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card">
-        <div class="card-header text-center clearfix">
+    <div class="card boba-card">
+        <div class="card-header boba-card-header text-center clearfix">
             {{isset($category) ? "Edit Category" : "Create Category"}}
         </div>
         <div class="card-body">

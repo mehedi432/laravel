@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card boba-card">
-        <div class="card-header text-center clearfix shadow-sm">Tags <span class="float-right"><a class="text-dark" href="{{route('tags.create')}}">Add</a></span></div>
+        <div class="card-header boba-card-header text-center clearfix shadow-sm">Tags <span class="float-right"><a class="text-dark" href="{{route('tags.create')}}">Add</a></span></div>
         <div class="card-body">
             @if ($tags->count()) 
                 <table class="table table-hover">

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card boba-card">
-        <div class="card-header text-center clearfix shadow-sm">
+        <div class="card-header boba-card-header text-center clearfix shadow-sm">
             {{isset($post) ? "Edit Post" : "Create Post"}}
         </div>
         <div class="card-body">
@@ -53,6 +53,13 @@
                                 @endif    
                             >{{$category->name}}</option>
                         @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <select name="tags[]" id="category" class="form-control">
+                        
                     </select>
                 </div>
 

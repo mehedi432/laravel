@@ -1,3 +1,11 @@
 .boba-card {
     border-radius: 0%;
 }
+
+.boba-card-header {
+    background-color: #ffffff;
+    font-family: 'Dejavu Serif Book';
+    letter-spacing: 1.6pt;
+    font-weight: bolder;
+    font-size: 13pt;
+}

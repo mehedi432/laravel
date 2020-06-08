@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card boba-card">
-        <div class="card-header text-center clearfix shadow-sm">Post <span class="float-right"><a class="text-dark" href="{{route('post.create')}}">Add</a></span></div>
+        <div class="card-header boba-card-header text-center clearfix shadow-sm">Post <span class="float-right"><a class="text-dark" href="{{route('post.create')}}">Add</a></span></div>
         <div class="card-body">
             @if ($posts->count() > 0)
                 <table class="table table-hover">

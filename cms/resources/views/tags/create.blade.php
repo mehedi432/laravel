@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header text-center clearfix">
+        <div class="card-header boba-card-header text-center clearfix">
             {{isset($tag) ? "Edit Tag" : "Create Tag"}}
         </div>
         <div class="card-body">
