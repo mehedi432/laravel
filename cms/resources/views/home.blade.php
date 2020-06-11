@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card boba-card">
-                <div class="card-header shadow-sm text-center">Dashboard</div>
+                <div class="card-header boba-card-header shadow-sm text-center">Dashboard</div>
 
                 <div class="card-body">
                     @if (session('status'))

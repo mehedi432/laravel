@@ -56,12 +56,24 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="tags">Tags</label>
-                    <select name="tags[]" id="category" class="form-control">
-                        
-                    </select>
-                </div>
+                @if ($tags->count() > 0)
+                    <div class="form-group">
+                        <label for="tags">Tags</label>
+                        <select name="tags[]" id="tags" class="form-control select-tags" multiple>
+                            @foreach ($tags as $tag)
+                                <option value="{{$tag->id}}"
+                                        @if (isset($post))
+                                            @if ($post->hasTag($tag->id))
+                                                selected
+                                            @endif
+                                        @endif
+                                    >
+                                    {{$tag->name}}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                @endif
 
                 @if (isset($post))
                     <div class="form-group">
@@ -90,6 +102,10 @@
     <script>
         flatpickr('#published_at', {
             enableTime: true,
+        });
+
+        $(document).ready(function() {
+            $('.select-tags').select2();
         });
     </script>
 @endsection

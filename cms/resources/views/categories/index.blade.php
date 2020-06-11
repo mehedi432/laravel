@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card boba-card">
-        <div class="card-header boba-card-header text-center clearfix shadow-sm">Category <span class="float-right"><a class="text-dark" href="{{route('category.create')}}">Add</a></span></div>
+        <div class="card-header boba-card-header text-center clearfix shadow-sm">Category <span class="float-left"><i class="material-icons">arrow_back</i></span> <span class="float-right"><a class="text-dark" href="{{route('category.create')}}"><i class="material-icons">add</i></a></span></div>
         <div class="card-body">
             @if ($categories->count()) 
                 <table class="table table-hover">
@@ -30,7 +30,6 @@
             @else
                 <h3 class="text-center">No category found in database, please add a category for displaying post</h3>
             @endif
-           
         </div>
     </div>
 

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card boba-card">
-        <div class="card-header boba-card-header text-center clearfix shadow-sm">Tags <span class="float-right"><a class="text-dark" href="{{route('tags.create')}}">Add</a></span></div>
+        <div class="card-header boba-card-header text-center clearfix shadow-sm">Tags <span class="float-right"><a class="text-dark" href="{{route('tags.create')}}"><i class="material-icons">add</i></a></span></div>
         <div class="card-body">
             @if ($tags->count()) 
                 <table class="table table-hover">
@@ -20,7 +20,7 @@
                             <tr>
                                 <td>{{$tag->id}}</td>
                                 <td>{{$tag->name}}</td>
-                                <td>0</td>
+                                <td>{{$tag->posts->count()}}</td>
                                 <td><a href="{{route('tags.edit', $tag->id)}}" class="btn btn-block btn-outline-info" >Edit</a></td>
                                 <td><button class="btn btn-block btn-outline-danger" onclick="handleDelete( {{ $tag->id }} )">Delete</button></td>
                             </tr>                        

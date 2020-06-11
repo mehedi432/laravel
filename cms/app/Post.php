@@ -29,4 +29,13 @@ class Post extends Model
     public function tags() {
         return $this->belongsToMany(Tag::class);
     }
+    /**
+     * Check if post has tags
+     * 
+     * return bool
+     */
+
+    public function hasTag($tagId) {
+        return in_array($tagId, $this->pluck('id')->toArray());
+    }
 }
