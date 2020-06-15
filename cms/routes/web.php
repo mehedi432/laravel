@@ -1,11 +1,9 @@
 <?php
 
+use App\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -20,10 +18,18 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::middleware(['auth', 'admin'])->group(function() {
-
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/users', 'UserController@index')->name('users');
     Route::post('/users/{user}/make-admin', 'UserController@makeAdmin')->name('users.make-admin');
     Route::get('/users/edit-profile', 'UserController@edit')->name('users.edit-profile');
-    Route::get('/users/{user}/update-profile', 'UserController@update')->name('users.update-profile');
+    Route::put('/users/update-profile', 'UserController@update')->name('users.update-profile');
 });
+
+// FRONT-END
+Route::middleware(['client'])->group(function() {
+    Route::get('/', 'WelcomeController@blog')->name('blog.index');
+    Route::get('/blog/{id}', 'WelcomeController@show')->name('blog.show');
+    Route::get('/business', 'WelcomeController@business')->name('business.index');
+});
+
+

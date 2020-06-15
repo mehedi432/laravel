@@ -13,7 +13,7 @@
                             <img src="{{ Gravatar::src($user->email, 200) }}" width="144pt" height="144pt" style="border-radius: 34%">
                         </div>
                     </div>
-                <form action="{{route('users.update-profile', $user->id)}}" method="post">
+                <form action="{{route('users.update-profile')}}" method="post">
                     @csrf
                     @method('PUT')
 
@@ -26,10 +26,13 @@
                         <label for="email">Email</label>
                        <input type="text" class="form-control" name="email" value="{{$user->email}}">
                     </div>
+
                     <div class="form-group">
                         <label for="about">About</label>
-                        <textarea class="form-control" cols="8" name="email" >{{$user->about}}</textarea>
+                        <textarea class="form-control" cols="8" name="about" >{{$user->about}}</textarea>
                     </div>
+
+                    <button type="submit" class="btn btn-block btn-outline-secondary">Update</button>
                 </form>
                 </div>
             </div>
