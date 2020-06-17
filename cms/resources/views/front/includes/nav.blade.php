@@ -1,9 +1,9 @@
-<nav class="navbar fixed-top navbar-expand-md navbar-dark shadow" style="background-color: #fff">
+<nav class="navbar fixed-top navbar-expand-md shadow" style="background-color: #fff">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <span class="text-danger" style="font-weight: bolder; letter-spacing: 5pt; font-family: 'Dejavu serif Book'">δ<span class="text-dark">Laboratory</span></span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" >
+        <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" >
             <i class="material-icons text-dark">menu</i></span>
         </button>
 
@@ -18,10 +18,7 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ route('login') }}" style="letter-spacing: 1.6px; font-family: 'Raleway', sans-serif;">{{ __('Home') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ route('login') }}" style="letter-spacing: 1.6px; font-family: 'Raleway', sans-serif;">{{ __('Blog') }}</a>
+                        <a class="nav-link text-dark" href="{{ route('blog.index') }}" style="letter-spacing: 1.6px; font-family: 'Raleway', sans-serif;">{{ __('Blog') }}</a>
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
@@ -29,12 +26,15 @@
                                 Categories
                             </button>
                             <div class="dropdown-menu">
-                                <a class="nav-link text-dark" href="{{ route('login') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Linux') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Android') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Linux') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Laravel') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Python') }} </a>
                             </div>
                           </div> 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ route('login') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Hire Us') }}</a>
+                        <a class="nav-link text-dark" href="{{ route('business.hire-us') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Hire Us') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="{{ route('login') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('About') }}</a>

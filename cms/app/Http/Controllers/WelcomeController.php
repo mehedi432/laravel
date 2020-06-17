@@ -12,11 +12,14 @@ class WelcomeController extends Controller
     public function blog()
     {
         $latest = DB::table('posts')->latest('created_at', 'desc')->first();
+        $latestTitle = $latest->title;
+        $splittedTitle = explode(' ', $latestTitle);
         $category = DB::table('categories')->find($latest->category_id);
 
         return view('front.welcome')
             ->with('posts', Post::all())
             ->with('post', $latest)
+            ->with('splitTitle', $splittedTitle)
             ->with('category', $category);
     }
 
@@ -30,7 +33,7 @@ class WelcomeController extends Controller
     {
         $post = Post::findorfail($id);
         $category = DB::table('categories')->find($post->category->id);
-        
+
         return view('front.single')->with('post', $post)->with('category', $category);
     }
 }

@@ -16,9 +16,12 @@
     {{-- Using select 2 --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/text-design.js') }}" defer></script>
+    <script src="anime.min.js"></script>
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap" rel="stylesheet"> 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -62,10 +65,6 @@
                     <div class="col-md-12">
                         @yield('content')
                     </div>
-
-                    {{-- <div class="col-md-2">
-                        @yield('sidebar')
-                    </div> --}}
                 </div>
             </div>
             @endauth

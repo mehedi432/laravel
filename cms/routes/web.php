@@ -2,6 +2,7 @@
 
 use App\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,10 +27,29 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 // FRONT-END
-Route::middleware(['client'])->group(function() {
+Route::middleware(['client'])->group(function () {
     Route::get('/', 'WelcomeController@blog')->name('blog.index');
     Route::get('/blog/{id}', 'WelcomeController@show')->name('blog.show');
     Route::get('/business', 'WelcomeController@business')->name('business.index');
+
+    Route::get('/categories/android', function () {
+        $androidPosts = DB::table('posts')->where('category_id', 1)->get();        
+        return view('front.categories.android')->with('posts', $androidPosts);
+    })->name('categories.android');
+    
+    Route::get('/categories/linux', function () {
+        return view('front.categories.linux');
+    })->name('categories.linux');
+    Route::get('/categories/laravel', function () {
+        return view('front.categories.laravel');
+    })->name('categories.laravel');
+    Route::get('/categories/python', function () {
+        return view('front.categories.python');
+    })->name('categories.python');
+
+    Route::get('/hire-us', function () {
+        return view('front.business.hire_us');
+    })->name('business.hire-us');
 });
 
 
