@@ -20,7 +20,8 @@
                     
                     <hr>
 
-                    <p class="" style="font-family: 'Raleway', sans-serif; letter-spacing: 1.6pt; text-align: center">{{Str::limit($post->description, 987)}}</p>
+                    <p class="" style="font-family: 'Raleway', sans-serif; letter-spacing: 1.6pt; text-align: left">{{$post->description}}</p>
+                    <p class="" style="font-family: 'Raleway', sans-serif; letter-spacing: 1.6pt; text-align: center">{!!$post->content!!}</p>
                 </div>
                 <div class="clearfix">
                     <form action="{{route('blog.index')}}" method="get">

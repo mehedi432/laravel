@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller
@@ -17,7 +15,7 @@ class WelcomeController extends Controller
         $category = DB::table('categories')->find($latest->category_id);
 
         return view('front.welcome')
-            ->with('posts', Post::all())
+            ->with('posts', Post::paginate(12))
             ->with('post', $latest)
             ->with('splitTitle', $splittedTitle)
             ->with('category', $category);

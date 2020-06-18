@@ -33,7 +33,7 @@
                 <div class="card boba-card shadow">
                     <img class="card-img-top" src="storage/{{$post->image}}" alt="Image">
                     <div class="card-body">
-                        <p class="" style="margin-bottom: 0%; margin-top: 0%; font-family: 'Raleway', sans-serif; letter-spacing: 1.6pt; text-align: center">{{Str::limit($post->title, 60)}}</p>
+                        <p class="" style="margin-bottom: 0%; margin-top: 0%; font-family: 'Raleway', sans-serif; letter-spacing: 1.6pt; text-align: center">{{Str::limit($post->title, 55)}}</p>
                         <div >
                             <p style="margin-bottom: 0%; margin-top: 0%" class="text-center font-weight-bolder" style="font-size: 13px; font-family: 'Raleway', sans-serif; letter-spacing: 1.6pt; text-align: center">{{$category->name}}</p>
                             <p style="margin-bottom: 0%; margin-top: 0%" class="text-center font-weight-bolder" style="font-size: 13px; font-family: 'Raleway', sans-serif; letter-spacing: 1.6pt; text-align: center">{{$post->created_at->diffForHumans() }}</p>
@@ -49,6 +49,7 @@
                 <br>
             </div>
             @endforeach
+            {{$posts->links()}}
         </div>
     </div>
 @endsection

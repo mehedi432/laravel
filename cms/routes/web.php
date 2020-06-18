@@ -38,13 +38,18 @@ Route::middleware(['client'])->group(function () {
     })->name('categories.android');
     
     Route::get('/categories/linux', function () {
-        return view('front.categories.linux');
+        $linuxPosts = DB::table('posts')->where('category_id', 2)->get();
+        return view('front.categories.linux')->with('posts', $linuxPosts);
     })->name('categories.linux');
+
     Route::get('/categories/laravel', function () {
-        return view('front.categories.laravel');
+        $laravelPosts = DB::table('posts')->where('category_id', 3)->get();
+        return view('front.categories.laravel')->with('posts', $laravelPosts);
     })->name('categories.laravel');
+
     Route::get('/categories/python', function () {
-        return view('front.categories.python');
+        $pythonPosts = DB::table('posts')->where('category_id', 4)->get();
+        return view('front.categories.python')->with('posts', $pythonPosts);
     })->name('categories.python');
 
     Route::get('/hire-us', function () {

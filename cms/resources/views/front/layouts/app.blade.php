@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> প্রোগ্রামিং বিদ্যা </title>
+    <title> Dellab | A place for learners.</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">

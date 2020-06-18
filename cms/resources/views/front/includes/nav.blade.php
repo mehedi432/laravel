@@ -1,7 +1,12 @@
 <nav class="navbar fixed-top navbar-expand-md shadow" style="background-color: #fff">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <span class="text-danger" style="font-weight: bolder; letter-spacing: 5pt; font-family: 'Dejavu serif Book'">δ<span class="text-dark">Laboratory</span></span>
+            <span class="text-danger" style="font-weight: bolder; letter-spacing: 5pt; font-family: 'Dejavu serif Book'">δ<span class="text-dark">Laboratory
+                {{-- <span class="txt-rotate"
+                data-period="1000"
+                data-rotate='[ "Laboratory", "L", "a", "b", "o", "r", "a", "t", "o", "r", "y" ]'>
+            </span> --}}
+        </span></span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" >
             <i class="material-icons text-dark">menu</i></span>
@@ -27,9 +32,9 @@
                             </button>
                             <div class="dropdown-menu">
                                 <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Android') }} </a>
-                                <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Linux') }} </a>
-                                <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Laravel') }} </a>
-                                <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Python') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.linux') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Linux') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.laravel') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Laravel') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.python') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Python') }} </a>
                             </div>
                           </div> 
                     </li>
