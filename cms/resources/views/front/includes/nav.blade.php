@@ -15,7 +15,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -32,9 +31,9 @@
                             </button>
                             <div class="dropdown-menu">
                                 <a class="nav-link text-dark" href="{{ route('categories.android') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Android') }} </a>
-                                <a class="nav-link text-dark" href="{{ route('categories.linux') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Linux') }} </a>
+                                {{-- <a class="nav-link text-dark" href="{{ route('categories.linux') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Linux') }} </a>
                                 <a class="nav-link text-dark" href="{{ route('categories.laravel') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Laravel') }} </a>
-                                <a class="nav-link text-dark" href="{{ route('categories.python') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Python') }} </a>
+                                <a class="nav-link text-dark" href="{{ route('categories.python') }}" style="letter-spacing: 1.6px; font-family: 'font-family: 'Raleway', sans-serif'; font-weight: bolder">{{ __('Python') }} </a> --}}
                             </div>
                           </div> 
                     </li>
